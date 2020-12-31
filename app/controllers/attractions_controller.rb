@@ -4,6 +4,16 @@ class AttractionsController < ApplicationController
   end
 
   def new
+    @attraction = Attraction.new
+  end
+
+  def create
+    @attraction = Attraction.find_or_create_by(attraction_params)
+    if @attraction
+      redirect_to attraction_route(attraction)
+    else
+      render :new
+    end
   end
 
   def show
