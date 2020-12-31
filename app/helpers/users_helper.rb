@@ -16,7 +16,4 @@ module UsersHelper
     current_user.admin
   end
 
-  def verify_admin
-
-  end
 end
