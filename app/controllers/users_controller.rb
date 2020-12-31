@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_user, only: [:new, :create]
+  before_action :verify_user, only: [:new, :create]
 
   def new
     @user = User.new
