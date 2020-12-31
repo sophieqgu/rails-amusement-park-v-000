@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   def mood
     unless admin
-      if happiness > nausea ? "happy" : "sad"
-    end 
+      happiness > nausea ? "happy" : "sad"
+    end
   end
 
 end
