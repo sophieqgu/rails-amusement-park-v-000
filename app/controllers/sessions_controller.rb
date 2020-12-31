@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :verify_user, unless: [:new, :create]
+  before_action :verify_user, only: [:show, :edit, :update, :destroy]
 
   def new
   end
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :new 
+      render :new
     end
   end
 
